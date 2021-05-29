@@ -1,0 +1,92 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Loco Demo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-02 12:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: hi_IN\n"
+"X-Generator: Loco https://localise.biz/"
+
+msgid "Hello World"
+msgstr ""
+
+# Example comment
+#. Example pluralized message
+#, php-format
+msgid "An example"
+msgid_plural "%s examples"
+msgstr[0] ""
+msgstr[1] ""
+
+
+
+msgid "Thank You"
+msgstr ""
+
+msgid "Sorry, your nonce did not verify"
+msgstr ""
+
+msgid "Go To Details Page"
+msgstr ""
+
+msgid "Term And Condition"
+msgstr ""
+
+msgid "Documents"
+msgstr ""
+
+msgid "Note : We accept only jpg, png, jpeg images"
+msgstr ""
+
+msgid "Payment transaction for the content id"
+msgstr ""
+
+msgid "Currency:"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Make Payment"
+msgstr ""
+
+msgid "contest List Not Found"
+msgstr ""
+
+msgid "Top contest"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "Details "
+msgstr ""
+
+msgid "Id"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Design Styles We Would Like To See:"
+msgstr ""
+
+msgid "Contest Entries:"
+msgstr ""
+
+msgid "Client Rank:"
+msgstr ""
+
+msgid "Unauthorized user"
+msgstr ""
