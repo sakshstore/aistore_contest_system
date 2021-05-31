@@ -106,6 +106,13 @@ function aistore_plugin_contest_table_install()
   amount int(100) NOT NULL,
   user_id int(100)   NOT NULL,
   contest_fee int(100) NOT NULL,
+   currency varchar(100)   NOT NULL,
+  end_date timestamp NOT NULL ,
+  created_by varchar(100) NOT NULL,
+  contest_holder_name varchar(100)   NOT NULL,
+  comapny_name varchar(100) NOT NULL,
+  comapny_slogan varchar(100) NOT NULL,
+  industry_type varchar(100) NOT NULL,
   status varchar(100)   NOT NULL DEFAULT 'pending',
   created_at timestamp NOT NULL DEFAULT current_timestamp(),
   
@@ -113,6 +120,17 @@ function aistore_plugin_contest_table_install()
   PRIMARY KEY (id)
 )  ";
      
+     $table_contest_notification="CREATE TABLE IF NOT EXISTS  " . $wpdb->prefix . "aistore_notification (
+  id int(100) NOT NULL,
+  message varchar(100) DEFAULT NULL,
+  type varchar(100) DEFAULT NULL,
+  user_login varchar(100) DEFAULT NULL,
+  created_at timestamp NOT NULL DEFAULT current_timestamp(),
+  url varchar(1000) DEFAULT NULL,
+  user_id int(10) DEFAULT NULL,PRIMARY KEY (id)
+) ";
+
+
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     
     
@@ -120,6 +138,7 @@ function aistore_plugin_contest_table_install()
     
     dbDelta($table_contest_system);
    
+    dbDelta($table_contest_notification);
 
 
 }

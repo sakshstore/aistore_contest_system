@@ -982,16 +982,7 @@ echo "<hr/>";
      
 <br>
 	   <div>
-	         
-	   <style>
-#hidden {
-  display: none;
-  height: 100px;
-  
-}
-:checked + #hidden {
-  display: block;
-}</style>
+
 
 
 <?php

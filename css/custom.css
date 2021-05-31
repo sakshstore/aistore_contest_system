@@ -1,5 +1,12 @@
 
-
+#hidden {
+  display: none;
+  height: 100px;
+  
+}
+:checked + #hidden {
+  display: block;
+}
 
 
 .box{
@@ -15,3 +22,6 @@
     width:100px;
    
 }
+
+
+
