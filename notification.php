@@ -86,41 +86,17 @@ function aistore_notification_new($n  ){
     
     
 
-	/*
-	$n=array();
-	$n['message']="test notification msg";
-	
-	$n['type']="success";
-	$n['url']="localhost";
-	
-	$n['user_login']=$login_email;
-	*/
-	
-	 
-	//$n['user_email']=$n['user_login'];
-	
+
    global $wpdb;
  
  
  $q1= ( $wpdb->prepare( "INSERT INTO {$wpdb->prefix}aistore_notification ( user_login, message,type,user_id,url ) VALUES ( %s, %s, %s ,%d ,%s)", array( $n['user_login'], $n['message'], $n['type']  ,$n['user_id'] ,$n['url']) ) );
 
-	
-//	echo $q1;
+
    
    $wpdb->query($q1);
 }
 
-function qr_to_log($log)
-{
-	
- $file =  dirname(__FILE__) . '/qrlog.php';
- 
-  $_SESSION['qr']=$log;
-file_put_contents($file,print_r($log,true).PHP_EOL .PHP_EOL .PHP_EOL .PHP_EOL .PHP_EOL , FILE_APPEND | LOCK_EX);
- 
-	
-	return 2;
-}
 
 
 

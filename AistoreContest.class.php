@@ -853,7 +853,7 @@ $contest = $wpdb->get_row($wpdb->prepare( "SELECT * FROM {$wpdb->prefix}contest 
 
 
  
-$object->contest_file_uploads($contest);
+$object->aistore_contest_file_uploads($contest);
 
     
     ?>
@@ -868,7 +868,7 @@ $object->contest_file_uploads($contest);
 
 // contest  file uploads
 
-private	function contest_file_uploads($contest){
+private	function aistore_contest_file_uploads($contest){
        global $wpdb;   
 $eid=  $contest->id;
 $created_by=$contest->created_by;
@@ -964,14 +964,14 @@ $document_rate=sanitize_text_field($_REQUEST['rate']);
 
     
     <?php
-        $this->print_rating($row);
+        $this->aistore_contest_print_rating($row);
         
     
-    $this->rating_form($row);
+    $this->aistore_contest_rating_form($row);
     
     if($created_by==$user_id){
-    $this->delete_contest_document($row);
-  $this->choose_him_as_winner_button($contest,$row);
+    $this->aistore_delete_contest_document($row);
+  $this->aistore_contest_choose_him_as_winner_button($contest,$row);
     }
     
 echo "<hr/>";
@@ -1035,7 +1035,7 @@ wp_nonce_field( 'aistore_nonce_action', 'aistore_nonce' );
 
 
 
-function rating_form($row)
+function aistore_contest_rating_form($row)
 {global $wpdb;
 
     
@@ -1064,7 +1064,7 @@ function rating_form($row)
 }
  
  
- function print_rating($row)
+ function aistore_contest_print_rating($row)
  {
      
  global $wpdb;
@@ -1105,7 +1105,7 @@ Submission #<?php echo  $row->id;?><br>
  }
  
  
- function delete_contest_document($entry){
+ function aistore_delete_contest_document($entry){
       
  
  
@@ -1126,7 +1126,7 @@ Submission #<?php echo  $row->id;?><br>
 
  
 	
-function choose_him_as_winner_button($contest,$entry)
+function aistore_contest_choose_him_as_winner_button($contest,$entry)
 {
      
       

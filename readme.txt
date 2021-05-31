@@ -3,11 +3,11 @@ Contributors: susheelhbti
 Donate link: http://www.aistore2030.com/
 Tags: Contest System 
 License: GPLv2
-Requires at least:  5.3
-Tested up to: 5.6
-Stable tag: 4.8.0
+Requires at least:  5.5
+Tested up to: 5.7
+Stable tag: 5.3.0
 Requires PHP: 7.0
-Version : 1.0
+Version : 1.1
 
 Aistore Contest System allow user to start logo or graphic design contest from their website.
 

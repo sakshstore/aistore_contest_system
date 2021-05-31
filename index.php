@@ -45,16 +45,16 @@ function aistore_contest_scripts_method()
 
 add_action('wp_enqueue_scripts', 'aistore_contest_scripts_method');
 
-function themeslug_enqueue_style() {
+function aistore_contest_enqueue_style() {
     wp_enqueue_style( 'saksh_contents', plugins_url('/css/custom.css', __FILE__), false );
 }
  
-function themeslug_enqueue_script() {
+function aistore_contest_enqueue_script() {
     wp_enqueue_script( 'saksh_contents', dirname(__FILE__) .'/js/custom.js', false );
 }
  
-add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
-add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
+add_action( 'wp_enqueue_scripts', 'aistore_contest_enqueue_style' );
+add_action( 'wp_enqueue_scripts', 'aistore_contest_enqueue_script' );
 
 
 

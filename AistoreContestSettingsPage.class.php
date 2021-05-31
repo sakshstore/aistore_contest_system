@@ -343,7 +343,7 @@ function aistore_contest_page_register_setting() {
 <p><?php  _e( 'Step 1', 'aistore' ) ?></p>
 
 
-<p><?php  _e( 'Install required plugin WooCommerce link https://wordpress.org/plugins/woocommerce/ and tera-wallet link https://wordpress.org/plugins/woo-wallet/ and activate as per their setup process. ', 'aistore' ) ?></p>
+<p><?php  _e( 'Install required plugin Escrow System link https://wordpress.org/plugins/saksh-escrow-system  and activate as per their setup process. ', 'aistore' ) ?></p>
 
 <hr />
 
