@@ -59,7 +59,7 @@ $title=sanitize_text_field($_REQUEST['title']);
 $amount=intval($_REQUEST['amount']);
 $currency=sanitize_text_field($_REQUEST['currency']);
 $term_condition=sanitize_text_field(htmlentities($_REQUEST['term_condition']));
- $ends_date=($_REQUEST['ends_date']);
+ $ends_date=sanitize_event_duration($_REQUEST['ends_date']);
  
 $contest_holder_name=sanitize_text_field($_REQUEST['contest_holder_name']);
 $comapny_name=sanitize_text_field($_REQUEST['comapny_name']);
