@@ -7,7 +7,7 @@ Requires at least:  5.5
 Tested up to: 5.7
 Stable tag: 5.3.0
 Requires PHP: 7.0
-Version : 1.1
+Version : 1.0
 
 Aistore Contest System allow user to start logo or graphic design contest from their website.
 
