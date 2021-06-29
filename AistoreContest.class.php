@@ -395,7 +395,8 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
     
     
     <p class="card-text">  <?php echo "Amount: ".number_format($row->amount) ." ".  $row->currency; ?><br />  
-  <?php echo "Contest Ends In : ".$row->end_date ;?>
+   <?php printf(__( "Contest Ends In : %s", 'aistore' ),$row->end_date);?>
+
   
   <?php 
     
@@ -405,7 +406,8 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
     
  
   ?><br />
-  <?php echo  "Submitted Entries:".$contest_entries->contest_entries ; ?> 
+
+   <?php printf(__( "Submitted Entries: %s", 'aistore' ),$contest_entries->contest_entries);?>
   </p>
   
 <hr />
@@ -541,7 +543,7 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
     SELECT count(*) as total_contest FROM '.$wpdb->prefix.'contest WHERE status="approve" and  end_date >= NOW() ' );
     
 
- <?php  printf(__( "Active Contests: %s", 'aistore' ),$results1->total_contest);?>
+ printf(__( "Active Contests: %s", 'aistore' ),$results1->total_contest);
   
 
 	 
@@ -833,7 +835,7 @@ $contest = $wpdb->get_row($wpdb->prepare( "SELECT * FROM {$wpdb->prefix}contest 
 	      
 	      
 	      <div class="alert alert-success" role="alert">
- <strong>Contest Status   <?php echo $contest->status;?></strong>
+ <strong> <?php _e( 'Contest Status', 'aistore' );  ?> <?php echo $contest->status;?></strong>
   </div>
 	  
 	  
@@ -999,7 +1001,7 @@ if($contest->status=='approved'){
 
 
 
-<label for="my_checkbox"><h3><u>Submit Entry</u></h3></label><br>
+<label for="my_checkbox"><h3><u> <?php _e( 'Submit Entry', 'aistore' );  ?></u></h3></label><br>
 
 
 
