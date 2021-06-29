@@ -6,7 +6,11 @@ Plugin URI: #
 Author: susheelhbti
 Author URI: http://www.aistore2030.com/
 Description: Aistore Contest System 
-
+Requires at least:  5.5
+Tested up to: 5.7
+Stable tag: 1.0.1
+Requires PHP: 7.0
+Version : 1.0
 
 */
 
@@ -17,34 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 add_action('init', 'aistorecontest_wpdocs_load_textdomain');
-
-
-
 function aistorecontest_wpdocs_load_textdomain()
 {
     load_plugin_textdomain('aistore', FALSE, basename(dirname(__FILE__)) . '/languages/');
 }
 
 
-function aistore_contest_scripts_method()
-{
-     
  
-
-
- 
-    //   wp_enqueue_style( 'aistore', get_stylesheet_directory_uri() . '/css/custom.css' );
-   wp_enqueue_style('aistore', plugins_url('/css/custom.css', __FILE__), array('style'),'',true);
-    wp_enqueue_script('aistore', plugins_url('/js/custom.js', __FILE__), array(
-        'jquery'
-    ));
-}
-
-
-
-
-add_action('wp_enqueue_scripts', 'aistore_contest_scripts_method');
-
 function aistore_contest_enqueue_style() {
     wp_enqueue_style( 'saksh_contents', plugins_url('/css/custom.css', __FILE__), false );
 }
@@ -60,7 +43,7 @@ add_action( 'wp_enqueue_scripts', 'aistore_contest_enqueue_script' );
 
 
 
-function aistorecontest_isadmin()
+function aistore_contest_isadmin()
 {
     
     $user          = wp_get_current_user();
@@ -77,14 +60,10 @@ function aistorecontest_isadmin()
 }
  
 
-function aistore_plugin_contest_table_install()
+function aistore_contest_table_install()
 {
     global $wpdb;
     
-    
-    
- 
-  
     
     
     
@@ -142,12 +121,10 @@ function aistore_plugin_contest_table_install()
 
 
 }
-register_activation_hook(__FILE__, 'aistore_plugin_contest_table_install');
+register_activation_hook(__FILE__, 'aistore_contest_table_install');
 
-//include_once dirname(__FILE__) . '/css/custom.css';
+
 include_once dirname(__FILE__) . '/notification.php';
-
-
 include_once dirname(__FILE__) . '/AistoreContest.class.php';
 include_once dirname(__FILE__) . '/AistoreContestSettingsPage.class.php';
 
@@ -176,6 +153,3 @@ add_shortcode('aistore_contest_detail', array(
     'AistoreContest',
     'aistore_contest_detail'
 ));
-
-
- 

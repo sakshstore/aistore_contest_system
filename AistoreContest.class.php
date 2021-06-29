@@ -56,7 +56,11 @@ if ( ! isset( $_POST['aistore_nonce'] )
 
 
 $title=sanitize_text_field($_REQUEST['title']);
+
+ 
 $amount=intval($_REQUEST['amount']);
+
+
 $currency=sanitize_text_field($_REQUEST['currency']);
 $term_condition=sanitize_text_field(htmlentities($_REQUEST['term_condition']));
  $ends_date=sanitize_event_duration($_REQUEST['ends_date']);
@@ -66,9 +70,9 @@ $comapny_name=sanitize_text_field($_REQUEST['comapny_name']);
 $comapny_slogan=sanitize_text_field($_REQUEST['comapny_slogan']);
 $industry_type=sanitize_text_field($_REQUEST['industry_type']);
  
-  $object=new AistoreContest();
+ 
 
-$contest_fee=$object->get_contest_fee($amount);
+$contest_fee=$this->get_contest_fee($amount);
 
    
     $new_amount=$amount-$contest_fee ;
@@ -543,11 +547,7 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
 $user_id = get_current_user_id();
 
 
-                 // this query is wrong
-                 
-// $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest where created_by' );
-
- 
+             
    $results = $wpdb->get_results($wpdb->prepare( "SELECT * FROM {$wpdb->prefix}contest WHERE created_by=%d ",$user_id));
    
  
