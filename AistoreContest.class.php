@@ -480,8 +480,9 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
     
     
     
-    <p class="card-text">  <?php echo "Amount: ".number_format($row->amount) ." ".  $row->currency; ?><br />  
-  <?php echo "Contest Ends In : ".$row->end_date ;?>
+    <p class="card-text"> 
+<?php printf(__( "Amount : %s", 'aistore' ),number_format($row->amount)." ".$row->currency);?><br />  
+  <?php  printf(__( "Contest Ends In : %s", 'aistore' ),$row->end_date);?>
   
   <?php 
     
@@ -491,7 +492,8 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
     
  
   ?><br />
-  <?php echo  "Submitted Entries:".$contest_entries->contest_entries ; ?> 
+    <?php  printf(__( "Submitted Entries: %s", 'aistore' ),$contest_entries->contest_entries);?>
+
   </p>
   
 <hr />
@@ -538,9 +540,8 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
    $results1 = $wpdb->get_row(' 
     SELECT count(*) as total_contest FROM '.$wpdb->prefix.'contest WHERE status="approve" and  end_date >= NOW() ' );
     
-   echo  "<br />Active Contests:  " .$results1->total_contest;
-   
 
+ <?php  printf(__( "Active Contests: %s", 'aistore' ),$results1->total_contest);?>
   
 
 	 
@@ -602,8 +603,11 @@ $user_id = get_current_user_id();
     
     
     
-    <p class="card-text">  <?php echo "Amount: ".number_format($row->amount) ." ".  $row->currency; ?><br />  
-  <?php echo "Contest Ends In : ".$row->end_date ;?>
+    <p class="card-text"> 
+
+
+  <?php printf(__( "Amount : %s", 'aistore' ),number_format($row->amount)." ".$row->currency);?><br />
+    <?php  printf(__( "Contest Ends In : %s", 'aistore' ),$row->end_date);?>
   
   <?php 
     
@@ -613,7 +617,8 @@ $user_id = get_current_user_id();
     
  
   ?><br />
-  <?php echo  "Submitted Entries:".$contest_entries->contest_entries ; ?> 
+    <?php  printf(__( "Submitted Entries: %s", 'aistore' ),$contest_entries->contest_entries);?>
+ 
   </p>
     <?php
      
@@ -810,13 +815,13 @@ ob_start();
     
     $results1 = $wpdb->get_row($wpdb->prepare( "SELECT count(*) as total_entries  FROM {$wpdb->prefix}contest_documents WHERE eid=%s and user_id!=%d  ",$eid, $user_id ));
     
-   echo  "<br />Submitted Entries: " .$results1->total_entries;
 
+  printf(__( "<br>Submitted Entries : %s", 'aistore' ),$results1->total_entries); 
 
 $contest = $wpdb->get_row($wpdb->prepare( "SELECT * FROM {$wpdb->prefix}contest WHERE id=%s ",$eid ));
   
-   echo "<br />  Contest Ends In  :  ". $contest->end_date ;
- 
+
+   printf(__( "<br>Contest Ends In  : %s", 'aistore' ),$contest->end_date); 
 
  ?><br>
 	  <div><br>
@@ -1127,8 +1132,8 @@ function aistore_contest_choose_him_as_winner_button($contest,$entry)
 <br>
   <form class="rating-form" action="" method="POST" name="winner_contest" enctype="multipart/form-data">
 <?php wp_nonce_field( 'aistore_nonce_action', 'aistore_nonce' ); ?>
-<input type="hidden" name="eid" value="<?php echo $entry->id; ?>">
-<input type="hidden" name="cid" value="<?php echo $contest->id; ?>">
+<input type="hidden" name="eid" value="<?php printf(__( "%s", 'aistore' ),$entry->id);?>">
+<input type="hidden" name="cid" value="<?php printf(__( "%s", 'aistore' ),$contest->id); ?>">
 <input type="submit" class="btn" name="submit" value="Choose him as winner"/>
 <input type="hidden" name="action" value="winner_contest" />
 </form>
@@ -1177,9 +1182,8 @@ $contest = $wpdb->get_row($wpdb->prepare( "SELECT count(id) as count FROM {$wpdb
             }
 
             $filename = wp_unique_filename( $user_dirname, $_FILES['file']['name'] );
-            
-            echo "filename".$filename;
-            
+          
+         printf(__( "filename :%s", 'aistore' ),$filename);
             
                 
             move_uploaded_file(sanitize_text_field($_FILES['file']['tmp_name']), $user_dirname .'/'. $filename);
