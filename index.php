@@ -6,11 +6,7 @@ Plugin URI: #
 Author: susheelhbti
 Author URI: http://www.aistore2030.com/
 Description: Aistore Contest System 
-Requires at least:  5.5
-Tested up to: 5.7
-Stable tag: 1.0.1
-Requires PHP: 7.0
-Version : 1.0
+
 
 */
 
@@ -20,8 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-add_action('init', 'aistorecontest_wpdocs_load_textdomain');
-function aistorecontest_wpdocs_load_textdomain()
+add_action('init', 'aistore_contest_wpdocs_load_textdomain');
+function aistore_contest_wpdocs_load_textdomain()
 {
     load_plugin_textdomain('aistore', FALSE, basename(dirname(__FILE__)) . '/languages/');
 }

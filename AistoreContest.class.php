@@ -384,17 +384,21 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
 
   <div class="card ">
       
-    <a href="<?php echo $details_contest_page_id_url; ?>" class=" ">  
+    <a href="<?php echo $details_contest_page_id_url; ?>" >  
     <br>
     
- <?php echo "# ".$row->id." ".$row->title ; ?> 
+ <?php
+ printf(__( "# : %s", 'aistore' ),$row->id." ".$row->title."<br>");
+ //echo "# ".$row->id." ".$row->title ; ?> 
     
     
     </a><br><br>
     
     
     
-    <p class="card-text">  <?php echo "Amount: ".number_format($row->amount) ." ".  $row->currency; ?><br />  
+    <p class="card-text">  <?php 
+	printf(__( "Amount: %s", 'aistore' ),number_format($row->amount) ." ".  $row->currency);
+	//echo "Amount: ".number_format($row->amount) ." ".  $row->currency; ?><br />  
    <?php printf(__( "Contest Ends In : %s", 'aistore' ),$row->end_date);?>
 
   
@@ -835,13 +839,15 @@ $contest = $wpdb->get_row($wpdb->prepare( "SELECT * FROM {$wpdb->prefix}contest 
 	      
 	      
 	      <div class="alert alert-success" role="alert">
- <strong> <?php _e( 'Contest Status', 'aistore' );  ?> <?php echo $contest->status;?></strong>
+ <strong> 
+ <?php printf(__( "Contest Status  %s", 'aistore' ),$contest->status); ?></strong>
   </div>
 	  
 	  
 	  
 	      <?php
-     echo "<strong>#". $contest->id ." ".$contest->title ."</strong><br>";
+	 printf(__( "# %s", 'aistore' ), $contest->id." ".$contest->title);
+     //echo "<strong>#". $contest->id ." ".$contest->title ."</strong><br>";
        printf(__( "<strong>Contest Holder Name</strong> <br> %s", 'aistore' ),html_entity_decode($contest->contest_holder_name)."<br><br>");
        
          printf(__( "<strong>Company Name</strong><br>  %s", 'aistore' ),html_entity_decode($contest->comapny_name)."<br><br>");
