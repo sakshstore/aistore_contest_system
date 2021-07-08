@@ -384,11 +384,11 @@ $results = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'contest WHERE stat
 
   <div class="card ">
       
-    <a href="<?php echo $details_contest_page_id_url; ?>" >  
+    <a href="<?php echo esc_url($details_contest_page_id_url); ?>" >  
     <br>
     
  <?php
- printf(__( "# : %s", 'aistore' ),$row->id." ".$row->title."<br>");
+ printf(__( "#: %s", 'aistore' ),$row->id." ".$row->title."<br>");
  //echo "# ".$row->id." ".$row->title ; ?> 
     
     
